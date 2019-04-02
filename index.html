@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
 	<script type="text/javascript" src="javascript/logic.js"></script>
 </head>
 <body>
@@ -23,11 +24,21 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="card">
-					<h5 class="card-header">Featured</h5>
+					<h5 class="card-header">Scheduled Trains</h5>
 					<div class="card-body">
-					    <h5 class="card-title">Special title treatment</h5>
-					    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+						<table class="table" id="trains">
+							<thead class="table-head">
+								<tr>
+									<th scope="col">Train</th>
+									<th scope="col">Destination</th>
+									<th scope="col">Train Frequency</th>
+									<th scope="col">Next Arrival</th>
+									<th scope="col">Minutes Away</th>
+									<th scope="col">Delete</th>
+								</tr>
+							</thead>
+							<tbody class="table-body"></tbody>
+						</table>
 					</div>
 				</div>
 			</div>
@@ -35,11 +46,27 @@
 		<div class="row">
 			<div class="col-sm-12">
 				<div class="card">
-					<h5 class="card-header">Featured</h5>
+					<h5 class="card-header">Add a Train</h5>
 					<div class="card-body">
-					    <h5 class="card-title">Special title treatment</h5>
-					    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+					    <form>
+					    	<div class="form-group">
+					    		<label>Train</label><br>
+					    		<input type="text" name="train">
+					    	</div>
+					    	<div class="form-group">
+					    		<label>Destination</label><br>
+					    		<input type="text" name="destination">
+					    	</div>
+					    	<div class="form-group">
+					    		<label>Train Frequency</label><br>
+					    		<input type="text" name="frequency">
+					    	</div>
+					    	<div class="form-group">
+					    		<label>First Train Time</label><br>
+					    		<input type="text" name="first">
+					    	</div>
+					    	<button type="submit" class="btn btn-primary" id="submit">Submit</button>
+					    </form>
 					</div>
 				</div>
 			</div>
